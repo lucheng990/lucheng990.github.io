@@ -1,22 +1,30 @@
 <section class="post-comments">
 
   <!-- 来必力City版安装代码 -->
-  <div id="lv-container" data-id="city" data-uid="MTAyMC80MTIyNS8xNzc3Mw==">
-  	<script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-
-         if (typeof LivereTower === 'function') { return; }
-
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-  	</script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-  </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="./dist/Valine.min.js"></script>
+</head>
+<body>
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '.comment', //
+            app_id: 'hG0oO9OUvDxCfwNyGSBEfNOu-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'ghSQTROtBqI1PKv9AlcaMYVC', // 这里填写上面得到的APP KEY
+            placeholder: '欢迎评论！' // [v1.0.7 new]留言框占位提示文字
+        });
+    </script>
+</body>
+</html>
   <!-- City版安装代码已完成 -->
 
 </section>
