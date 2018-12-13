@@ -24,7 +24,7 @@ output: 类别
 
 设\\(\hat{y}\\)分别为1、2、3......，然后在测试（应用）的时候，Function 输出的值靠近哪个\\(\hat{y}\\)就定义为哪个类别。
 
-![01RegressionCase](https://i.loli.net/2018/12/13/5c127416dec76.png)](https://i.loli.net/2018/12/13/5c127416dec76.png)
+![01RegressionCase](https://i.loli.net/2018/12/13/5c127416dec76.png)
 
 
 
@@ -46,7 +46,7 @@ output: 类别
 
 ### 有一种理想的替代方式
 
-![02Alternative](https://i.loli.net/2018/12/13/5c1272b63250a.png)](https://i.loli.net/2018/12/13/5c1272b63250a.png)
+![02Alternative](https://i.loli.net/2018/12/13/5c1272b63250a.png)
 
 在Model里面内建一个function,g(x)。如果g(x)>0输出Class1,g(x)<0输出 Class2。
 
@@ -66,7 +66,7 @@ output: 类别
 
 ### 用概率的方法解
 
-![03贝叶斯](https://i.loli.net/2018/12/13/5c1272a75439b.png)](https://i.loli.net/2018/12/13/5c1272a75439b.png)
+![03贝叶斯](https://i.loli.net/2018/12/13/5c1272a75439b.png)
 
 > 贝叶斯公式
 
@@ -82,9 +82,9 @@ $$
 
 现在把盒子换成分类（类别1、类别2）
 
-![04贝叶斯2](https://i.loli.net/2018/12/13/5c1272af8835c.png)](https://i.loli.net/2018/12/13/5c1272af8835c.png)
+![04贝叶斯2](https://i.loli.net/2018/12/13/5c1272af8835c.png)
 
-![05贝叶斯3](https://i.loli.net/2018/12/13/5c1272adefde3.png)](https://i.loli.net/2018/12/13/5c1272adefde3.png)
+![05贝叶斯3](https://i.loli.net/2018/12/13/5c1272adefde3.png)
 
 给定一个向量X(含有各个维度信息),要知道它是从哪一个Class里面出来的几率，就需要知道如下信息：
 
@@ -101,11 +101,11 @@ $$
 
 但是，如果遇到一个不曾见过的POKEMON，即输入任意一组向量\\(x\\)，并且要知道它在Class1里面出现的几率，这和简单的红球蓝球不同。可以用到高斯分布（正态分布）来求。
 
-![06gaosifb](https://i.loli.net/2018/12/13/5c1272bc395f7.png)](https://i.loli.net/2018/12/13/5c1272bc395f7.png)
+![06gaosifb](https://i.loli.net/2018/12/13/5c1272bc395f7.png)
 
 假设input 的x有2 个属性，则依据二维高斯分布可以求出概率。
 
-![07gaosifb2](https://i.loli.net/2018/12/13/5c1272bd591aa.png)](https://i.loli.net/2018/12/13/5c1272bd591aa.png)
+![07gaosifb2](https://i.loli.net/2018/12/13/5c1272bd591aa.png)
 
 
 
@@ -118,9 +118,9 @@ $$
 
 同样的\\(\Sigma\\)不同的\\(\mu\\)；同样的\\(\mu\\)不同的\\(\Sigma\\)，得到的分布不同
 
-![08gaosifb3](https://i.loli.net/2018/12/13/5c1272bde13c5.png)](https://i.loli.net/2018/12/13/5c1272bde13c5.png)
+![08gaosifb3](https://i.loli.net/2018/12/13/5c1272bde13c5.png)
 
-![09gaosifb4](https://i.loli.net/2018/12/13/5c1272b42b1ad.png)](https://i.loli.net/2018/12/13/5c1272b42b1ad.png)
+![09gaosifb4](https://i.loli.net/2018/12/13/5c1272b42b1ad.png)
 
 知道了这两个参数就可以求出一个新的点的分布概率。
 
@@ -128,7 +128,7 @@ $$
 
 ### 求\\(\mu\\)和\\(\Sigma\\)。即求一个最好的高斯分布函数
 
-![10qiugaosifb1](https://i.loli.net/2018/12/13/5c1272b506f06.png)](https://i.loli.net/2018/12/13/5c1272b506f06.png)
+![10qiugaosifb1](https://i.loli.net/2018/12/13/5c1272b506f06.png)
 
 极大似然估计方法：已知某个高斯分布。这个分布的 Likelihood,记为\\(L(\mu,\Sigma)\\)。要注意这里的L 不是Loss Function。这个Likelihood就是这个高斯分布 sample 出这些点的几率，其值越大越好。
 $$
@@ -159,7 +159,7 @@ $$
 \Sigma^*=\frac{1}{79}\sum^{79}_{\mathrm{n=1}}(x^n-\mu^*)(x^n-\mu^*)^T
 $$
 
-![11qiugaosifb2](https://i.loli.net/2018/12/13/5c1272aff029a.png)](https://i.loli.net/2018/12/13/5c1272aff029a.png)
+![11qiugaosifb2](https://i.loli.net/2018/12/13/5c1272aff029a.png)
 
 
 
@@ -167,15 +167,15 @@ $$
 
 #### 在这个例子中，可以求出高斯分布
 
-![12qiugaosifb3](https://i.loli.net/2018/12/13/5c127376e4e45.png)](https://i.loli.net/2018/12/13/5c127376e4e45.png)
+![12qiugaosifb3](https://i.loli.net/2018/12/13/5c127376e4e45.png)
 
 
 
 ### 用已知的高斯分布函数来求出每一个类别的可能性
 
-![13qiuknx](https://i.loli.net/2018/12/13/5c127385a9fb6.png)](https://i.loli.net/2018/12/13/5c127385a9fb6.png)
+![13qiuknx](https://i.loli.net/2018/12/13/5c127385a9fb6.png)
 
-![14qiuknxjg](https://i.loli.net/2018/12/13/5c127387ac38f.png)](https://i.loli.net/2018/12/13/5c127387ac38f.png)
+![14qiuknxjg](https://i.loli.net/2018/12/13/5c127387ac38f.png)
 
 可以发现效果并不是特别好。
 
@@ -197,9 +197,9 @@ model参数多，更容易 overfitting
 
 所以可以减少参数(parameter)：在设计模型时，可以故意给不同的Class 共享一个\\(\Sigma\\)。
 
-![15yh](https://i.loli.net/2018/12/13/5c12738626e40.png)](https://i.loli.net/2018/12/13/5c12738626e40.png)
+![15yh](https://i.loli.net/2018/12/13/5c12738626e40.png)
 
-![16yh](https://i.loli.net/2018/12/13/5c1273862675c.png)](https://i.loli.net/2018/12/13/5c1273862675c.png)
+![16yh](https://i.loli.net/2018/12/13/5c1273862675c.png)
 
 这样的话，在优化参数的时候，Likelihood 也需要有相应的改变。不同的 Class 使用同一个 Likelihood 。
 
@@ -217,7 +217,7 @@ $$
 
 ### 优化结果
 
-![17yhjg](https://i.loli.net/2018/12/13/5c12738669cfc.png)](https://i.loli.net/2018/12/13/5c12738669cfc.png)
+![17yhjg](https://i.loli.net/2018/12/13/5c12738669cfc.png)
 
 共用同一个 covariance matrix 以后，boundary从一条曲线变成了一条直线。这样的model也可以称之为linear model。
 
@@ -233,7 +233,7 @@ $$
 
 #### 三个步骤
 
-![18threesteps](https://i.loli.net/2018/12/13/5c127386258b6.png)](https://i.loli.net/2018/12/13/5c127386258b6.png)
+![18threesteps](https://i.loli.net/2018/12/13/5c127386258b6.png)
 
 
 
@@ -252,7 +252,7 @@ $$
 
 #### 有一种假设
 
-![19jieshi](https://i.loli.net/2018/12/13/5c127382dc3f7.png)](https://i.loli.net/2018/12/13/5c127382dc3f7.png)
+![19jieshi](https://i.loli.net/2018/12/13/5c127382dc3f7.png)
 
 假设一个input X里面有K个互相独立的维度的参数，那么这个X在\\(C_1\\)里面被sample出来的几率就应该是各个维度的几率的积。积中的每一个因子都是一个1维的高斯分布。
 
@@ -274,7 +274,7 @@ $$
 
 #### 分析
 
-![20fenxi](https://i.loli.net/2018/12/13/5c12738626006.png)](https://i.loli.net/2018/12/13/5c12738626006.png)
+![20fenxi](https://i.loli.net/2018/12/13/5c12738626006.png)
 
 将其上下同除以分子。
 
@@ -297,11 +297,11 @@ $$
 
 #### 针对\\(z\\)，对z进行一系列化简、转化
 
-![21z](https://i.loli.net/2018/12/13/5c12738630c1b.png)](https://i.loli.net/2018/12/13/5c12738630c1b.png)
+![21z](https://i.loli.net/2018/12/13/5c12738630c1b.png)
 
-![22z](https://i.loli.net/2018/12/13/5c12741602ec0.png)](https://i.loli.net/2018/12/13/5c12741602ec0.png)
+![22z](https://i.loli.net/2018/12/13/5c12741602ec0.png)
 
-![23z](https://i.loli.net/2018/12/13/5c1274160bb4f.png)](https://i.loli.net/2018/12/13/5c1274160bb4f.png)
+![23z](https://i.loli.net/2018/12/13/5c1274160bb4f.png)
 
 得到最后的结果：蓝色方框里面的\\(z\\)
 
@@ -311,9 +311,9 @@ $$
 
 因为 共用了covariance matrix，可以再次简化
 
-![24zz](https://i.loli.net/2018/12/13/5c12740e8245a.png)](https://i.loli.net/2018/12/13/5c12740e8245a.png)
+![24zz](https://i.loli.net/2018/12/13/5c12740e8245a.png)
 
-![25zz](https://i.loli.net/2018/12/13/5c127415bdbd3.png)](https://i.loli.net/2018/12/13/5c127415bdbd3.png)
+![25zz](https://i.loli.net/2018/12/13/5c127415bdbd3.png)
 
 左边那项是一个矩阵(vector)，右边是一项数字(scalar)。
 
@@ -321,5 +321,5 @@ $$
 
 这也解释了为什么共用一个covariance matrix 以后的boundary 是一条直线。
 
-![26reference](https://i.loli.net/2018/12/13/5c127416c8d4b.png)](https://i.loli.net/2018/12/13/5c127416c8d4b.png)
+![26reference](https://i.loli.net/2018/12/13/5c127416c8d4b.png)
 
