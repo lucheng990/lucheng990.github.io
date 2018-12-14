@@ -73,6 +73,8 @@ output: 类别
 
 
 如果取出的是一个蓝球，那么这个球从Box1中取出的概率为：
+
+
 $$
 P(\mathrm{B_1}|\mathrm{Blue})=\frac{P(\mathrm{Blue|B_1})P({\mathrm{B_1}})}{P(\mathrm{Blue|B_1})P(\mathrm{B_1})+P(\mathrm{Blue|B_2})P(\mathrm{B_2})}
 $$
@@ -88,10 +90,10 @@ $$
 
 给定一个向量X(含有各个维度信息),要知道它是从哪一个Class里面出来的几率，就需要知道如下信息：
 
-1. Class1里面取到X的几率\\(P(x|C_1)\\)。
-2. Class2里面取到X的几率\\(P(x|C_2)\\)。
-3. 取到Class1本身的几率\\(P(C_1)\\)。
-4. 取到Class2本身的几率\\(P(C_2)\\)。
+1. Class1里面取到X的几率$$P(x|C_1)$$。
+2. Class2里面取到X的几率$$P(x|C_2)$$。
+3. 取到Class1本身的几率$$P(C_1)$$。
+4. 取到Class2本身的几率$$P(C_2)$$。
 
 
 
@@ -106,8 +108,6 @@ $$
 假设input 的x有2 个属性，则依据二维高斯分布可以求出概率。
 
 ![07gaosifb2](https://i.loli.net/2018/12/13/5c1272bd591aa.png)
-
-
 
 现在要求两个参数：\\(\mu\\)和\\(\Sigma\\)
 
@@ -131,6 +131,8 @@ $$
 ![10qiugaosifb1](https://i.loli.net/2018/12/13/5c1272b506f06.png)
 
 极大似然估计方法：已知某个高斯分布。这个分布的 Likelihood,记为\\(L(\mu,\Sigma)\\)。要注意这里的L 不是Loss Function。这个Likelihood就是这个高斯分布 sample 出这些点的几率，其值越大越好。
+
+
 $$
 L(\mu,\Sigma)=f_{\mu,\Sigma}(x^1)f_{\mu,\Sigma}(x^2)f_{\mu,\Sigma}(x^3)......f_{\mu,\Sigma}(x^{79})
 $$
@@ -140,15 +142,18 @@ $$
 
 #### 要求出这个 高斯分布
 
-即求出一个让Likelihood 最大的高斯分布函数，也就是要求出 \\(\mu^*\\)和\\(\Sigma^*\\)。
+即求出一个让Likelihood 最大的高斯分布函数，也就是要求出 $$\mu^*$$和$$\Sigma^*$$。
 
 
 
 方法：穷举所有的\\(\mu\\)和\\(\Sigma\\)，可以用微积分来解
+
+
 $$
 \mu^*,\Sigma^*=arg\,\mathop{max}\limits_{\mu,\Sigma}L(\mu,\Sigma)
 $$
 可以得到结果：
+
 
 
 $$
@@ -206,6 +211,8 @@ model参数多，更容易 overfitting
 
 
 其中的结果是，\\(\mu^1\\)和\\(\mu^2\\) 和之前的算法一样，而\\(\Sigma\\)则有不同，要同时考虑两个Class。用element的数目来作为权重。
+
+
 $$
 \Sigma=\frac{79}{140}\Sigma^1+\frac{61}{140}\Sigma^2
 $$
@@ -237,7 +244,7 @@ $$
 
 
 
-1. 在第一步中的模型中，\\(P(X|C_1)\\) 和\\(P(X|C_2)\\) 由自己选择设计的高斯分布函数决定。在这里作为Model的参数。
+1. 在第一步中的模型中，$$P(X|C_1)$$ 和$$P(X|C_2)$$ 由自己选择设计的高斯分布函数决定。在这里作为Model的参数。
 2. function的好坏用 Likelihood 形容，其越大越好。\\(\mu\\)和 \\(\Sigma\\)的取值可以自己决定。
 
 
@@ -281,14 +288,24 @@ $$
 
 
 现在假设 
+
+
 $$
 z=ln\frac{P(x|C_1)P(C_1)}{P(x|C_2)P(C_2)}
 $$
+
+
 那么，原式就变成了
+
+
 $$
 \frac{1}{1+e^{-z}}
 $$
+
+
 记
+
+
 $$
 \frac{1}{1+e^{-z}}=\sigma(z) \qquad  ,即\mathrm{Sigmoid\;function}
 $$
