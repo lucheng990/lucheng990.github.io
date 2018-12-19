@@ -235,13 +235,7 @@ l(y,\hat{y})=C(y,\hat{y})=-\sum_{i=1}^{10}\hat{y}_i \ln y_i
 $$
 
 
-这里反应的是整体，其中:
-$$
-\hat{y}_i
-$$
-
-
-表示（后面的项）对某一项生效，
+这里反应的是整体，其中:\\(\hat{y}\\)表示（后面的项）对某一项生效，
 $$
 \ln y_i
 $$
@@ -259,7 +253,7 @@ Cross Entropy 表示两个分布的相似程度，越小越好。若两个分布
 
 
 
-Target (即\\(\hat{y}\\)是一个10维的Vector。
+Target (即\\(\hat{y}\\))是一个10维的Vector。
 
 
 
@@ -279,13 +273,12 @@ Target (即\\(\hat{y}\\)是一个10维的Vector。
 
 
 $$
-L=\sum^N_{n=1}C^n
+L=\sum^N_{n=1}l^n
 $$
 
 
 
-
-**接下来要做的就是要在 Function Set 中找到一个Function，能够最小化 Total Loss L，或者说找到神经网络中的各个参数，能够最小化 Total Loss L。
+**接下来要做的就是要在 Function Set 中找到一个Function，能够最小化 Total Loss L，或者说找到神经网络中的各个参数，能够最小化 Total Loss L。**
 
 
 
