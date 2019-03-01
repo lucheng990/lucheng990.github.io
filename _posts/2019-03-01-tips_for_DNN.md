@@ -1,10 +1,3 @@
----
-tag: 机器学习
----
-
-
-
-
 # 改进 DL
 
 
@@ -335,6 +328,8 @@ $$
 
 
 做偏微分，进行参数更新：
+
+
 $$
 \frac{\partial L'}{\partial w}=\frac{\partial L}{\partial w}+\lambda w
 $$
@@ -344,10 +339,16 @@ w^{t+1} \gets w^t- \eta \frac{\partial L'}{\partial w}=w^t -\eta (\frac{\partial
 =(1-\eta \lambda)w^t - \eta \frac{\partial L}{\partial w}
 $$
 
+
+
 如果不加Regularization，那么最后参数更新：
+
+
 $$
 w^{t+1} \gets w^t-\eta \frac{\partial L}{\partial w}
 $$
+
+
 两者相比，多了一项
 $$
 (1-\eta \lambda)
@@ -360,7 +361,7 @@ $$
 $$
 (1-\eta \lambda)
 $$
-接近于。这样会使参数偏小。
+接近于0。这样会使参数偏小。
 
 
 
@@ -373,17 +374,29 @@ $$
 L1 regularization 会和L2 regularization 有一些小差别
 
 **L1 regularization**
+
+
 $$
 \lVert \theta \rVert_1 =\lvert w_1 \rvert +\lvert w_2 \rvert +...
 $$
+
+
 新的Loss Function：
+
+
 $$
 L'(\theta)=L(\theta)+\lambda \frac{1}{2} \lVert \theta \rVert_1
 $$
+
+
 做偏微分：
+
+
 $$
 \frac{\partial L'}{\partial w}=\frac{\partial L}{\partial w} + \lambda \mathrm{sgn} (w)
 $$
+
+
 其中，sgn是符号函数，如果\\(w\\)是正的就是1，如果\\(w\\)是负的就是-1 。
 
 更新参数：
@@ -391,6 +404,8 @@ $$
 w^{t+1} \gets w^t -\eta \frac{\partial L'}{\partial w} =w^t-\eta (\frac{\partial L}{\partial w}+ \lambda \mathrm{sgn}(w^t)) \\
 = w^t -\eta \frac{\partial L}{\partial w} -\eta \lambda \mathrm{sgn}(w^t)
 $$
+
+
 其中的
 $$
 -\eta \lambda \mathrm{sgn}(w^t)
