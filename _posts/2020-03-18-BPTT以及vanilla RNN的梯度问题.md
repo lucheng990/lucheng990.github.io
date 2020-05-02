@@ -1,6 +1,6 @@
-```
+---
 tag: 机器学习
-```
+---
 
 
 
@@ -269,8 +269,3 @@ $$
 
 
 <iframe width="956" height="538" src="https://www.youtube.com/embed/3Hn_hEPtciQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-
-
