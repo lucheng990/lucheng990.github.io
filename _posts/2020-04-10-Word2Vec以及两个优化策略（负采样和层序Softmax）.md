@@ -148,6 +148,8 @@ $$
 $$
 \prod_{t=1}^T P(w^t | w^{t-m}, \cdots, w^{t-1}, w^{t+1},\cdots, w^{t+m})
 $$
+
+
 其中m为窗口大小。改为加法，损失函数如下：
 
 
@@ -331,6 +333,8 @@ $$
 
 
 最后，Hierarchical softmax的计算复杂度为
+
+
 $$
 o(\log(\lvert V\rvert))
 $$
